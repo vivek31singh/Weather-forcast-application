@@ -12,7 +12,7 @@ function App() {
   <Inputs/>
   <TimeAndLocation/>
   <TemperatureAndDetails/>
-  <Forcast title={"houurly forcast"}/>
+  <Forcast title={"hourly forcast"}/>
   <Forcast title={"daily forcast"}/>
 </div>
   )
