@@ -4,7 +4,14 @@ function TimeAndLocation() {
   return (
     <div>
       <div className="flex items-center justify-center my-6">
-        <h1 className="text-center">Time and Location</h1>
+        <p className="text-white text-xl font-extralight">
+          Tuesday, 31 may 2023 | Local time: 12:46 PM
+        </p>
+      </div>
+      <div className="flex items-center justify-center my-3">
+        <p className="text-white text-xl font-medium">
+          Berlin, DE
+        </p>
       </div>
     </div>
   );
