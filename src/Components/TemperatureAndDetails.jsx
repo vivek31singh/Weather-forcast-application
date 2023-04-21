@@ -6,67 +6,80 @@ import { MdOutlineWbSunny } from "react-icons/md";
 import { TbSunset2 } from "react-icons/tb";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { formatToLocalTime, iconUrlFromCode } from "../Services/WeatherService";
 
-function TemperatureAndDetails() {
+function TemperatureAndDetails({
+  weather: {
+    details,
+    icon,
+    temp,
+    temp_min,
+    temp_max,
+    sunrise,
+    sunset,
+    speed,
+    humidity,
+    feels_like,
+    timezone,
+  },
+}) {
   return (
     <div>
       <div className="flex items-center justify-center py-6 text-xl text-cyan-300">
-        <p>Cloudy or rain</p>
+        <p>{details}</p>
       </div>
 
       <div className="flex flex-row items-center justify-between text-white py-3">
         <img
-          src="http://openweathermap.org/img/wn/01d@2x.png"
+          src={iconUrlFromCode(icon)}
           alt=""
           className="w-20"
         />
-        <p className="text-5xl">34°</p>
-        <div className="flex flex-col space-y-2 ">
+        <p className="text-5xl max-sm:text-xl">{`${temp.toFixed()}°`}</p>
+        <div className="flex flex-col space-y-2 max-sm:ml-6">
           <div className="flex font-light text-sm items-center justify-center">
-            <CiTempHigh size={18} className="mr-1" />
+            <CiTempHigh size={18} className="mr-1"/>
             Real fell:
-            <span className="font-medium ml-1">32°</span>
+            <span className="font-medium ml-1">{`${feels_like.toFixed()}°`}</span>
           </div>
 
           <div className="flex font-light text-sm items-center justify-center">
-            <BiDroplet size={18} className="mr-1" />
+            <BiDroplet size={18} className="mr-1"/>
             Humidity:
-            <span className="font-medium ml-1">65%</span>
+            <span className="font-medium ml-1">{`${humidity.toFixed()}%`}</span>
           </div>
 
           <div className="flex font-light text-sm items-center justify-center">
             <BiWind size={18} className="mr-1" />
             Wind:
-            <span className="font-medium ml-1">11 km/h</span>
+            <span className="font-medium ml-1">{`${speed.toFixed()}Km/h`}</span>
           </div>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
+      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3 max-sm:justify-start">
         <MdOutlineWbSunny />
         <p className="font-light">
-          Rise: <span className="sfont-medium ml-1">06:45 AM</span>
+          Rise: <span className="font-medium ml-1 max-sm:text-xs">{formatToLocalTime(sunrise, timezone, "hh:mm a")}</span>
         </p>
         <p className="font-light ">|</p>
 
         <TbSunset2 />
         <p className="font-light">
-          Set: <span className="sfont-medium ml-1">07:35 PM</span>
+          Set: <span className="font-medium ml-1 max-sm:text-xs">{formatToLocalTime(sunset, timezone, "hh:mm a")}</span>
         </p>
         <p className="font-light ">|</p>
-
 
         <AiOutlineArrowUp />
         <p className="font-light">
-          High: <span className="sfont-medium ml-1">45°</span>
+          High: <span className="font-medium ml-1 max-sm:text-xs">{`${temp_max.toFixed()}°`}</span>
         </p>
         <p className="font-light ">|</p>
-
 
         <AiOutlineArrowDown />
         <p className="font-light">
-          Low: <span className="sfont-medium ml-1">45°</span>
+          Low: <span className="font-medium ml-1 max-sm:text-xs">{`${temp_min.toFixed()}°`}</span>
         </p>
-        <p className="font-light ">|</p>
+        
       </div>
     </div>
   );
