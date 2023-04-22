@@ -56,7 +56,7 @@ function TemperatureAndDetails({
           </div>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3 max-sm:justify-start -ml-20">
+      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3 max-sm:justify-start -ml-16">
         <MdOutlineWbSunny />
         <p className="font-light">
           Rise: <span className="font-medium ml-1 max-sm:text-xs">{formatToLocalTime(sunrise, timezone, "hh:mm a")}</span>
