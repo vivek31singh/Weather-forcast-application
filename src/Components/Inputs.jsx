@@ -57,7 +57,7 @@ const handleUnitsChange=(e)=>{
       <div className="flex flex-row w-1/4 items-center justify-center max-sm:ml-10">
         <button
           name="metric"
-          className="text-xl text-white font-light hover:scale-125 transition ease-out max-sm:ml-20"
+          className="text-xl text-white font-light hover:scale-125 transition ease-out max-sm:ml-44"
           onClick={handleUnitsChange}
         >
           °C
