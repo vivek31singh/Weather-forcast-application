@@ -37,19 +37,22 @@ function App() {
 
   return (
     <div
-      className={`mx-auto max-sm:w-455px overflow-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
+      className={`mx-auto max-sm:w-full overflow-auto max-w-screen-md mt-4 py-5 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
+      style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <TopButtons setQuery={setQuery} />
-      <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
-      {weather && (
-        <div>
-          <TimeAndLocation weather={weather} />
-          <TemperatureAndDetails weather={weather} />
-          {/* <Forcast title="hourly forcast" items={weather.hourly}/>
-          <Forcast title="daily forcast" items={weather.daily}/> */}
-        </div>
-      )}
-      <ToastContainer autoClose={3000} theme="colored" newestOnTop={true} />
+      <div>
+        <TopButtons setQuery={setQuery} />
+        <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+        {weather && (
+          <div>
+            <TimeAndLocation weather={weather} />
+            <TemperatureAndDetails weather={weather} />
+            {/* <Forcast title="hourly forcast" items={weather.hourly}/>
+            <Forcast title="daily forcast" items={weather.daily}/> */}
+          </div>
+        )}
+        <ToastContainer autoClose={3000} theme="colored" newestOnTop={true} />
+      </div>
     </div>
   );
 }
