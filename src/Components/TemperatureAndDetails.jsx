@@ -36,7 +36,7 @@ function TemperatureAndDetails({
           className="w-20 max-sm:-ml-24"
         />
         <p className="text-5xl max-sm:text-xl mr-10">{`${temp.toFixed()}°`}</p>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2 max-sm:ml-6">
           <div className="flex font-light text-sm items-center justify-center">
             <CiTempHigh size={18} className="mr-1"/>
             Real fell:
@@ -56,7 +56,7 @@ function TemperatureAndDetails({
           </div>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3 max-sm:justify-start">
+      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3 max-sm:justify-start -ml-12">
         <MdOutlineWbSunny />
         <p className="font-light">
           Rise: <span className="font-medium ml-1 max-sm:text-xs">{formatToLocalTime(sunrise, timezone, "hh:mm a")}</span>
