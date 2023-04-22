@@ -29,27 +29,27 @@ function TemperatureAndDetails({
         <p>{details}</p>
       </div>
 
-      <div className="flex flex-row items-center justify-between text-white py-3">
+      <div className="flex flex-row items-center justify-between text-white py-3 ">
         <img
           src={iconUrlFromCode(icon)}
           alt=""
-          className="w-20 max-sm:-ml-24"
+          className="w-20 max-sm:ml-8"
         />
-        <p className="text-5xl max-sm:text-xl mr-10">{`${temp.toFixed()}°`}</p>
-        <div className="flex flex-col space-y-2 max-sm:ml-6">
-          <div className="flex font-light text-sm items-center justify-center">
+        <p className="text-5xl max-sm:text-xl -ml-32">{`${temp.toFixed()}°`}</p>
+        <div className="flex flex-col space-y-2 max-sm:-ml-6">
+          <div className="flex font-light text-sm items-center justify-center max-sm:-ml-12">
             <CiTempHigh size={18} className="mr-1"/>
             Real fell:
             <span className="font-medium ml-1">{`${feels_like.toFixed()}°`}</span>
           </div>
 
-          <div className="flex font-light text-sm items-center justify-center">
+          <div className="flex font-light text-sm items-center justify-center max-sm:-ml-12">
             <BiDroplet size={18} className="mr-1"/>
             Humidity:
             <span className="font-medium ml-1">{`${humidity.toFixed()}%`}</span>
           </div>
 
-          <div className="flex font-light text-sm items-center justify-center">
+          <div className="flex font-light text-sm items-center justify-center max-sm:-ml-12">
             <BiWind size={18} className="mr-1" />
             Wind:
             <span className="font-medium ml-1">{`${speed.toFixed()}Km/h`}</span>
