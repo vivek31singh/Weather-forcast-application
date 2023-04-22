@@ -36,7 +36,7 @@ function TemperatureAndDetails({
           className="w-20 max-sm:-ml-24"
         />
         <p className="text-5xl max-sm:text-xl mr-10">{`${temp.toFixed()}°`}</p>
-        <div className="flex flex-col space-y-2 max-sm:ml-6">
+        <div className="flex flex-col space-y-2">
           <div className="flex font-light text-sm items-center justify-center">
             <CiTempHigh size={18} className="mr-1"/>
             Real fell:
