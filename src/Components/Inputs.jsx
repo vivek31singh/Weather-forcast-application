@@ -40,7 +40,7 @@ const handleUnitsChange=(e)=>{
           onChange={(e) => setCity(e.currentTarget.value)}
           type="text"
           placeholder="search for city..."
-          className="text-xl font-light p-2 focus:outline-none w-full shadow-xl capitalize placeholder:lowercase max-sm:w-40"
+          className="text-xl font-light p-2 focus:outline-none w-full shadow-xl capitalize placeholder:lowercase max-sm:w-60"
         />
         <BsSearch
           size={25}
